@@ -1,5 +1,5 @@
 /**
-*@interview_route.js
+*@tokenController.js
 *Copyright ( 2021 Jalasoft 2643 Av Melchor Perez de Olguin Colquiri Sud, Cochabamba, Bolivia.
 *Av. General Inofuentes esquina Calle 20,Edificio Union № 1376, La Paz, Bolivia
 *All rights reserved
@@ -12,21 +12,16 @@
 const generateToken = require('../models/generateToken');
 
 class TokenController{
+    /**
+     * Gets a valit token for a jitsi meeting.
+     * @param {Object} req - The request object.
+     * @param {Object} res - The response object to be sent back to the client.
+     * @returns {json} The response of generateToken function.
+     */
     getToken (req, res) {
         const data = req.body;
-        // const token = generateToken('1234', 'Gio Perez', 'gio@gmail.com', 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50', 'guest', 'at20ReuMeeting');
         const token = generateToken(data.id, data.name, data.email, data.image, data.role, data.roomName);
         res.json({Token: token});
-    }
-    //Get an Interview by Id from mongo db
-    getInterviewById = async (req, res) => {
-        const data = req.params.id;
-        const interview = await model.findOne({"id": data});
-        if (!interview) {
-            res.status(404).json({ message: 'Interview not found' });
-        } else {
-            res.json(interview);
-        }
     }
 }
 module.exports = TokenController;
