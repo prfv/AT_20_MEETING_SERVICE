@@ -13,6 +13,8 @@ const express = require("express");
 const router = express.Router();
 const InterviewController = require('../controllers/interview_route');
 const interviewController = new InterviewController();
+const TokenController = require('../controllers/tokenController');
+const tokenController = new TokenController();
 
 //Endpoint to create an interview
 router.post(
@@ -43,5 +45,10 @@ router.delete(
     interviewController.deleteInterviewById
 );
 
+// Endpoint to obtain a meeting token
+router.get(
+    '/token',
+    tokenController.getToken
+);
 
 module.exports = router;
