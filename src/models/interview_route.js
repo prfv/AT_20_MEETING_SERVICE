@@ -18,12 +18,15 @@ const interviewSchema = new mongoose.Schema (
             type: mongoose.Schema.Types.ObjectId,
             auto: true,
         },
-        host_global_id: {
-            type: String
-        },
-        guest_global_id: [{
-            value : String,
+        host_global_id: [{
+            id : String,
             name : String,
+            phone: String,
+        }],
+        guest_global_id: [{
+            id : String,
+            name : String,
+            phone: String,
         }],
         meeting_name: {
             type: String,
@@ -44,6 +47,9 @@ const interviewSchema = new mongoose.Schema (
             value : String,
             label : String,
         }],
+        active:{
+            type: Boolean,
+        }
     },
     {
         timestamps:true,
