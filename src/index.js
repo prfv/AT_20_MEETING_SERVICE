@@ -38,5 +38,5 @@ mongoDb.dbConnectMongo();
 // Start the server
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
-    console.log('The app is online');
+    console.log('The app is online in port ' + port);
 });
