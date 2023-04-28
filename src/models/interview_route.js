@@ -41,6 +41,9 @@ const interviewSchema = new mongoose.Schema(
             value: String,
             label: String,
         }],
+        active:{
+            type: Boolean,
+        }
     },
     {
         timestamps: true,
