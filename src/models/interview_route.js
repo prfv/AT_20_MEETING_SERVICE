@@ -12,21 +12,15 @@
 const mongoose = require('mongoose');
 
 /* Creating a schema for the interview collection. */
-const interviewSchema = new mongoose.Schema (
+const interviewSchema = new mongoose.Schema(
     {
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            auto: true,
-        },
         host_global_id: [{
-            id : String,
-            name : String,
-            phone: String,
+            value: String,
+            name: String,
         }],
         guest_global_id: [{
-            id : String,
-            name : String,
-            phone: String,
+            value: String,
+            name: String,
         }],
         meeting_name: {
             type: String,
@@ -44,16 +38,16 @@ const interviewSchema = new mongoose.Schema (
             type: Date,
         },
         time_zone: [{
-            value : String,
-            label : String,
+            value: String,
+            label: String,
         }],
         active:{
             type: Boolean,
         }
     },
     {
-        timestamps:true,
-        versionKey:false
+        timestamps: true,
+        versionKey: false
     }
 );
 module.exports = mongoose.model('interview', interviewSchema);
