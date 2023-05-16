@@ -46,9 +46,11 @@ router.delete(
 );
 
 // Endpoint to obtain a meeting token
-router.get(
+router.post(
     '/token',
     tokenController.getToken
 );
+
+router.get('/my-interviews', interviewController.getMyInterviews)
 
 module.exports = router;
