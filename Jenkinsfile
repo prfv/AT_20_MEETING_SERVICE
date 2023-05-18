@@ -8,8 +8,8 @@ pipeline {
             }
         }
         stage('Test') {
-            steps{
-                ss 'echo Second stage'
+            steps {
+                sh 'echo Here the Testing program'
             }
         }
     } 
