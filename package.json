@@ -2,10 +2,10 @@
   "name": "at20_questionnaire_service",
   "version": "1.0.0",
   "description": "",
-
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -24,8 +24,9 @@
     "mongoose": "^7.0.1"
   },
   "devDependencies": {
+    "jest": "^29.5.0",
     "nodemon": "^2.0.21",
-    "pino" : "^8.11.0",
+    "pino": "^8.11.0",
     "pino-pretty": "^10.0.0"
   }
 }
