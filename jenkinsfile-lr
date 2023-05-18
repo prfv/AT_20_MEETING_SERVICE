@@ -9,7 +9,7 @@ pipeline {
         }
         stage ('Test'){
             steps {
-                sh 'echo Here the testing command'
+                sh 'echo Here the testing meeting'
             }
         }
     }
